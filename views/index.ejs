@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://m.xcite.com/js/ext/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <div class="gen-container container w-[97%] max-w-screen-2xl py-[50px] mar20-t pad20-t mb-[20px] pad20-b mx-auto">
+        <!-- Main Title -->
+        <section class="font-bold text-3xl mx-auto text-center mb-10">
+            Xcite Email Template Generator beta
+        </section>
+
+        <div class="text-base lg:text-lg font-light text-center mb-10">Note that all fields marked with
+            <span class="text-[#f00]">*</span>
+            are mandatory make sure to fill all fileds
+        </div>
+
+        <form id="templateForm">
+            <!-- language & Template type selction -->
+            <section class="grid md:grid-cols-3 gap-4 mar20-t fields mb-6">
+                <div id="Language" class="mb-[20px] req-field nextField">
+                    <span class="req-star top-[2px] left-0">*</span><i class="arrow down top-[50px]"></i>
+                    <div class="searchable pos h-[80px]">
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Select Language</label>
+                        <input id="tempLang" type="text" class="form-control w-full border px-2"
+                            placeholder="choose Language" readonly="readonly" />
+                        <ul>
+                            <li>en</li>
+                            <li>ar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="Template" class="mb-[20px] req-field nextField" style="display: none">
+                    <span class="req-star top-[2px] left-0">*</span><i class="arrow down top-[50px]"></i>
+                    <div class="searchable pos h-[80px]">
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Select Template</label>
+                        <input id="tempType" type="text" class="form-control w-full border px-2"
+                            placeholder="Choose Template" readonly="readonly" />
+                        <ul>
+                            <li id="Temp-1">1 Banner, 6 products, 1 strip</li>
+                            <li id="Temp-2">Custom Template
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="BnrBrdctPart" class="mb-[20px] req-field nextField" style="display: none">
+                    <span class="req-star top-[2px] left-0">*</span><i class="arrow down top-[50px]"></i>
+                    <div class="searchable pos h-[80px]">
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Select last part of Template</label>
+                        <input id="BnrBrdctType" type="text" class="form-control w-full border px-2"
+                            placeholder="Choose last part" readonly="readonly" />
+                        <ul>
+                            <li id="product">1 Banner, 4 products, 1 strip, 4 products</li>
+                            <li id="TowBnrs">1 Banner, 4 products, 1 strip, 2 Banner</li>
+                            <li id="FourBnrs">1 Banner, 4 products, 1 strip, 4 Banner</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Header Links -->
+            <section id="headerLinks" class="mar20-t nextField" style="display: none">
+                <div class="text-2xl font-semibold text-center mb-6">Header Links</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Link Text</label>
+                            <input id="FirstLinkText" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Link URL</label>
+                            <input id="FirstLinkUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Link Text</label>
+                            <input id="SecondLinkText" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Link URL</label>
+                            <input id="SecondLinkUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 3<sup>rd</sup> Link Text</label>
+                            <input id="ThirdLinkText" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 3<sup>rd</sup> Link URL</label>
+                            <input id="ThirdLinkUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 4<sup>th</sup> Link Text</label>
+                            <input id="FourthLinkText" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 4<sup>th</sup> Link URL</label>
+                            <input id="FourthLinkUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Banner -->
+            <section id="tempBanner" style="display: none">
+                <div class="text-2xl font-semibold text-center mb-6">Main Banner Data</div>
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add Banner Title</label>
+                            <input id="tempBnrTitle" type="text" class="form-control w-full border px-2"
+                                placeholder="Banner Title" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add Banner Image URL</label>
+                            <input id="tempBnrImg" type="text" class="form-control w-full border px-2"
+                                placeholder="Banner Image URL" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add Banner Redirect URL</label>
+                            <input id="tempBnrLink" type="text" class="form-control w-full border px-2"
+                                placeholder="Banner Redirect URL" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- template 1 -> 6 Products part -->
+            <section id="TempForm1" class="mar20-t nextField" style="display: none">
+                <div class="text-2xl font-semibold text-center mb-6">Template 1 fields</div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Product URL</label>
+                            <input id="Pd1Url" type="text" class="form-control w-full border px-2"
+                                placeholder="First Product URL" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Product URL</label>
+                            <input id="Pd2Url" type="text" class="form-control w-full border px-2"
+                                placeholder="Second Product URL" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 3<sup>rd</sup> Product URL</label>
+                            <input id="Pd3Url" type="text" class="form-control w-full border px-2"
+                                placeholder="Third Product URL" />
+                        </div>
+                    </div>
+
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 4<sup>th</sup> Product URL</label>
+                            <input id="Pd4Url" type="text" class="form-control w-full border px-2"
+                                placeholder="Fourth Product URL" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 5<sup>th</sup> Product URL</label>
+                            <input id="Pd5Url" type="text" class="form-control w-full border px-2"
+                                placeholder="Fifth Product URL" />
+                        </div>
+                    </div>
+
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 6<sup>th</sup> Product URL</label>
+                            <input id="Pd6Url" type="text" class="form-control w-full border px-2"
+                                placeholder="Sixth Product URL" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- template 2 -> 4 Products part 1 -->
+            <section id="TempForm2" class="mar20-t nextField" style="display: none">
+                <div class="text-2xl font-semibold text-center mb-6">
+                    Template 2 fields
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Product URL</label>
+                            <input id="Pd1Url3" type="text" class="form-control w-full border px-2"
+                                placeholder="First Product URL" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Product URL</label>
+                            <input id="Pd2Url3" type="text" class="form-control w-full border px-2"
+                                placeholder="Second Product URL" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 3<sup>rd</sup> Product URL</label>
+                            <input id="Pd3Url3" type="text" class="form-control w-full border px-2"
+                                placeholder="Third Product URL" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 4<sup>th</sup> Product URL</label>
+                            <input id="Pd4Url3" type="text" class="form-control w-full border px-2"
+                                placeholder="Fourth Product URL" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Strip -->
+            <section id="tempStrip" class="grid grid-cols-2 gap-4 mb-6" style="display: none">
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add Strip Image URL</label>
+                        <input id="tempStripImg" type="text" class="form-control w-full border px-2"
+                            placeholder="Strip Image URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add Strip Redirect URL</label>
+                        <input id="tempStripLink" type="text" class="form-control w-full border px-2"
+                            placeholder="Strip Redirect URL" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- template 2 -> 4 Products part 2 -->
+            <section id="productsPart2" class="grid grid-cols-2 gap-4 mb-6 mar20-t nextField" style="display: none">
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 5<sup>th</sup> Product URL</label>
+                        <input id="Pd5Url3" type="text" class="form-control w-full border px-2"
+                            placeholder="Fifth Product URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 6<sup>th</sup> Product URL</label>
+                        <input id="Pd6Url3" type="text" class="form-control w-full border px-2"
+                            placeholder="Sixth Product URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 7<sup>th</sup> Product URL</label>
+                        <input id="Pd7Url3" type="text" class="form-control w-full border px-2"
+                            placeholder="seventh Product URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 8<sup>th</sup> Product URL</label>
+                        <input id="Pd8Url3" type="text" class="form-control w-full border px-2"
+                            placeholder="eighth Product URL" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- template 2 -> 2 Banners part -->
+            <section id="bannersPart1" class="grid grid-cols-2 gap-4 mb-6 mar20-t nextField" style="display: none">
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Banner Image URL</label>
+                        <input id="suplireBnrImg1" type="text" class="form-control w-full border px-2"
+                            placeholder="First Banner Image URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Banner Redirect URL</label>
+                        <input id="suplireBnrLink1" type="text" class="form-control w-full border px-2"
+                            placeholder="First Banner Redirect URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Banner Image URL</label>
+                        <input id="suplireBnrImg2" type="text" class="form-control w-full border px-2"
+                            placeholder="Second Banner Image URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Banner Redirect URL</label>
+                        <input id="suplireBnrLink2" type="text" class="form-control w-full border px-2"
+                            placeholder="Second Banner Redirect URL" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- template 2 -> 4 Banners part -->
+            <section id="bannersPart2" class="grid grid-cols-2 gap-4 mb-6 mar20-t nextField" style="display: none">
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Banner Image URL</label>
+                        <input id="suplireBnrImg3" type="text" class="form-control w-full border px-2"
+                            placeholder="First Banner Image URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Banner Redirect URL</label>
+                        <input id="suplireBnrLink3" type="text" class="form-control w-full border px-2"
+                            placeholder="First Banner Redirect URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Banner Image URL</label>
+                        <input id="suplireBnrImg4" type="text" class="form-control w-full border px-2"
+                            placeholder="Second Banner Image URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Banner Redirect URL</label>
+                        <input id="suplireBnrLink4" type="text" class="form-control w-full border px-2"
+                            placeholder="Second Banner Redirect URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 3<sup>rd</sup> Banner Image URL</label>
+                        <input id="suplireBnrImg5" type="text" class="form-control w-full border px-2"
+                            placeholder="Third Banner Image URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 3<sup>rd</sup> Banner Redirect URL</label>
+                        <input id="suplireBnrLink5" type="text" class="form-control w-full border px-2"
+                            placeholder="Third Banner Redirect URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 4<sup>th</sup> Banner Image URL</label>
+                        <input id="suplireBnrImg6" type="text" class="form-control w-full border px-2"
+                            placeholder="Fourth Banner Image URL" />
+                    </div>
+                </div>
+                <div class="mb-[20px] req-field">
+                    <span class="req-star top-[2px] left-0">*</span>
+                    <div>
+                        <label class="h4 input-lbl mb-2 ml-[15px] block">Add 4<sup>th</sup> Banner Redirect URL</label>
+                        <input id="suplireBnrLink6" type="text" class="form-control w-full border px-2"
+                            placeholder="Fourth Banner Redirect URL" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Brands -->
+            <!-- <section id="topBrands" class="mar20-t nextField" style="display: none">
+                <div class="text-2xl font-semibold text-center mb-6">Top Brands</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Brand Logo</label>
+                            <input id="FirstBrandLogo" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 1<sup>st</sup> Brand URL</label>
+                            <input id="FirstBrandUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Brand Logo</label>
+                            <input id="SecondBrandLogo" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 2<sup>nd</sup> Brand URL</label>
+                            <input id="SecondBrandUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 3<sup>rd</sup> Brand Logo</label>
+                            <input id="ThirdBrandLogo" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 3<sup>rd</sup> Brand URL</label>
+                            <input id="ThirdBrandUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 4<sup>th</sup> Brand Logo</label>
+                            <input id="FourthBrandLogo" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 4<sup>th</sup> Brand URL</label>
+                            <input id="FourthBrandUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 5<sup>th</sup> Brand Logo</label>
+                            <input id="FifthBrandLogo" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 5<sup>th</sup> Brand URL</label>
+                            <input id="FifthBrandUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 6<sup>th</sup> Brand Logo</label>
+                            <input id="SixthBrandLogo" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 6<sup>th</sup> Brand URL</label>
+                            <input id="SixthBrandUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 7<sup>th</sup> Brand Logo</label>
+                            <input id="SeventhBrandLogo" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 7<sup>th</sup> Brand URL</label>
+                            <input id="SeventhBrandUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 8<sup>th</sup> Brand Logo</label>
+                            <input id="EighthBrandLogo" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                    <div class="mb-[20px] req-field">
+                        <span class="req-star top-[2px] left-0">*</span>
+                        <div>
+                            <label class="h4 input-lbl mb-2 ml-[15px] block">Add 8<sup>th</sup> Brand URL</label>
+                            <input id="EighthBrandUrl" type="text" class="form-control w-full border px-2" />
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- Generate Button -->
+            <section class="mar20-t fields flex justify-center">
+                <div id="Submit" class="col-xs-12 mb-[20px] text-center mar20-t nextField" style="display: none">
+                    <button id="TempGen" class="btn btn-default gen-btn mar20-r" style="display: none"></button>
+                    <input type="submit" value="Generate Template" class="btn btn-default gen-btn mar20-r">
+                </div>
+            </section>
+        </form>
+
+        <div id="copyMessage">Code copied to clipboard!</div>
+
+        <!-- Loader -->
+        <section class="loader fixed w-full h-full bg-[#000000c2] top-0 left-0 bottom-0 right-0 z-10"
+            style="display: none">
+            <div class="sppiner">Loading<span></span></div>
+            <p class="mx-auto mt-4 block absolute -translate-x-[50%] top-[56%] left-[50%]">Please Wait...</p>
+        </section>
+
+        <!-- Final Code & Starty agian -->
+        <section class="mar20-t fields">
+            <div id="finalTemp" class="col-xs-12 mb-[20px] nextField" style="display: none">
+                <label class="field-title h3 block">Your Final Code</label>
+                <button id="copyToClip" class="btn btn-default mar10-b">Copy Template</button>
+                <button id="reset" class="btn btn-default mar10-b float-right">Start again</button>
+                <textarea id="output"
+                    class="form-control w-full border px-2 mt-6 resize-none text-base rounded-lg min-h-[1000px]"
+                    rows="3" placeholder="Click Generate Template to show yours"></textarea>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        const apiUrl = '<%= apiOriginalUrl %>';
+        console.log("api URL form app.js is: ", apiUrl)
+    </script>
+
+    <script src="/variables.js"></script>
+    <script src="/defaults.js"></script>
+    <script src="/jquery.js"></script>
+    <script src="/generate.js"></script>
+    <script src="/fetchData.js"></script>
+    <script src="/copyReset.js"></script>
+    <script src="/returnHeader.js"></script>
+    <script src="/returnFooter.js"></script>
+    <script src="/returnProducts.js"></script>
+
+</body>
+
+
+</html>

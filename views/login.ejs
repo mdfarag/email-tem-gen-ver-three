@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+	<div class="container mx-auto text-center">
+		<form class="w-full mx-auto loginForm" action="/login" method="POST">
+			<h1 class="font-bold text-3xl mx-auto text-center mb-20 mt-24">Email Template Generator <span class="block mt-4 font-semibold"> Sign in</span></h1>
+			<label for="username" class="h4 mb-2 block mb-6">
+				<span class="w-[200px] inline-block">User Name</span>
+				<input class="form-control border px-2" type="text" id="username" name="username" required>
+			</label>
+			<label for="password" class="h4 mb-2 block mb-12">
+				<span class="w-[200px] inline-block">Password</span>
+				<input class="form-control border px-2" type="password" id="password" name="password" required>
+			</label>
+			<button type="submit" class="rounded-lg w-[200px] bg-black h-[50px] border">Login</button>
+		</form>
+	</div>
+</body>
+
+</html>
