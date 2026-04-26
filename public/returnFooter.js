@@ -339,6 +339,9 @@ function returnFooter(ftIndex) {
                                                                     rel="noopener">FAQs</a> for full
                                                                 details.</span>
 
+                                                                <span
+                                                                style="font-size:11px;margin-top: 15px;display: block;margin-bottom: 15px;">All prices, promotions, and product availability are subject to change at our discretion and may be updated without prior notice to the customer.</span>
+
                                                             <span style="font-size:11px">
                                                                 <strong>XCITE
                                                                     PRICES AND ORDERS
@@ -427,7 +430,7 @@ function returnFooter(ftIndex) {
                                                             &nbsp;</p>
                                                         <p
                                                             style="margin:0;text-align:left;font-size:11px;mso-line-height-alt:19.8px">
-                                                            <span style="font-size:11px">© 2025 X-cite
+                                                            <span style="font-size:11px">© 2026 X-cite
                                                                 General Trading Co. SPC (C). All rights
                                                                 reserved.&nbsp;</span>
                                                         </p>
@@ -785,6 +788,12 @@ function returnFooter(ftIndex) {
                                                                     الشائعة</a> للحصول على مزيد من
                                                                 التفاصيل.</span>
 
+
+                                                                 <span
+                                                                style="font-size:12px;display: block;margin-bottom: 15px;">جميع الأسعار والعروض الترويجية وتوافر المنتجات قابلة للتغيير وفقًا لتقديرنا، وقد يتم تحديثها دون إشعار مسبق للعميل.</span>
+
+                                                                
+
                                                             <strong>
                                                                 <span style="font-size:12px">سياسة اكسايت للأسعار
                                                                     والشراء:</span>
@@ -839,7 +848,7 @@ function returnFooter(ftIndex) {
                                                                 شرق، شارع الشهداء، برج
                                                                 الحمرا، الدور 70، الكويت.</span>
 
-                                                            <span style="font-size:12px">© ٢٠٢٥ شركة اكسايت للتجارة
+                                                            <span style="font-size:12px">© ٢٠٢٦ شركة اكسايت للتجارة
                                                                 العامة
                                                                 ش.ش.و</span>
                                                         </p>
